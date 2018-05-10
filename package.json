@@ -1,0 +1,56 @@
+{
+  "name": "js-stack",
+  "version": "1.0.0",
+  "description": "Plantilla para sitios web en stack JS PERNS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "debug": "nodemon --inspect ./bin/www",
+    "start-client":"cd client && npm start",
+    "prebuild": "npm i -g sequelize sequelize-cli pg pg-hstore && sequelize db:migrate && sequelize db:seed:all",
+    "postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darknesstiller/js-stack.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "nodejs",
+    "express",
+    "sequelize"
+  ],
+  "author": "darknesstiller",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/darknesstiller/js-stack/issues"
+  },
+  "homepage": "https://github.com/darknesstiller/js-stack#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "hoek": "^5.0.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.3",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "sequelize": "^4.37.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
