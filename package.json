@@ -7,8 +7,9 @@
     "start": "nodemon ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
     "start-client":"cd client && npm start",
-    "prebuild": "npm i -g sequelize sequelize-cli pg pg-hstore && sequelize db:migrate && sequelize db:seed:all",
-    "postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "prebuild": "npm i -g sequelize sequelize-cli pg pg-hstore",
+    "postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "migrate":"sequelize db:migrate && sequelize db:seed:all"
   },
   "cacheDirectories": [
     "node_modules",
