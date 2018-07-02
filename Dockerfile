@@ -1,10 +1,11 @@
-FROM node:carbon
+FROM node
 WORKDIR /usr/src/app
-RUN npm run prebuild
 COPY package*.json ./
+COPY entrypoint.sh ./
 RUN npm install
+COPY src/client/package*.json ./src/client/
+RUN npm install --prefix ./src/client
 COPY . .
-RUN npm run postbuild
-RUN npm run migrate
+RUN npm i -g sequelize sequelize-cli pg pg-hstore
 EXPOSE 8101
-CMD [ "npm","start" ]
+ENTRYPOINT [ "/bin/bash","entrypoint.sh" ]
