@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 // Thunk
 import thunkMiddleware from 'redux-thunk';
 
-import { mainReducer } from './Reducers/Main';
-import Page from './Components/Page';
+import { mainReducer } from './Reducers/Main.example';
+import Page from './Components/Page.example';
 import './index.css';
 // Mas Thunk
 var store = createStore(

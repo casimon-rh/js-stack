@@ -6,10 +6,10 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
-    "start-client":"cd client && npm start",
+    "start-client": "cd client && npm start",
     "prebuild": "npm i -g sequelize sequelize-cli pg pg-hstore",
     "postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "migrate":"sequelize db:migrate && sequelize db:seed:all"
+    "migrate": "sequelize db:migrate && sequelize db:seed:all"
   },
   "cacheDirectories": [
     "node_modules",
@@ -37,6 +37,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "hoek": "^5.0.3",
+    "jsonwebtoken": "^8.3.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3",
     "pg": "^7.4.1",

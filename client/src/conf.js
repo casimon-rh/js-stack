@@ -1,3 +1,4 @@
-var config = {};
-/*config.apibaseurl = "http://localhost:3001/api/";*/
-export default config;
+var conf = {
+  apibaseurl: process.env.REACT_APP_BASE_URL
+};
+export default conf;
